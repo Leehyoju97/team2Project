@@ -18,8 +18,8 @@ public class Account {
     public void deposit(long amount) {
         // todo: withdraw 코드중복 고치기
         Date date = new Date();
-        String transactionDate = DateExample.dateToString(date);
-        String transactionTime = DateExample.timeToString(date);
+        String transactionDate = DateConverter.dateToString(date);
+        String transactionTime = DateConverter.timeToString(date);
         balance += amount;
         System.out.println(amount + "원 입금하셨습니다.");
         System.out.println("현재 잔액은 " + balance + "원 입니다.");
@@ -33,8 +33,8 @@ public class Account {
             return;
         }
         Date date = new Date();
-        String transactionDate = DateExample.dateToString(date);
-        String transactionTime = DateExample.timeToString(date);
+        String transactionDate = DateConverter.dateToString(date);
+        String transactionTime = DateConverter.timeToString(date);
         balance -= amount;
         System.out.println(amount + "원 출금하셨습니다.");
         System.out.println("현재 잔액은 " + balance + "원 입니다.");
