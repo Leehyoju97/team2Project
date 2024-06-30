@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         while (true) {
+            // todo: 메서드 분리(printMenu)
             System.out.println("메뉴를 선택하세요");
             System.out.println("1. 계좌 생성");
             System.out.println("2. 계좌 찾기 (계좌번호)");
@@ -96,6 +97,7 @@ public class Main {
         }
     }
 
+    // todo: 메서드 네이밍 수정
     private static void ListAllAccount() {
         System.out.println("= 전체 계좌 목록 =");
         List<Account> accounts = bank.getAccounts();

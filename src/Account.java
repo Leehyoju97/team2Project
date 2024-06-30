@@ -16,6 +16,7 @@ public class Account {
     }
 
     public void deposit(long amount) {
+        // todo: withdraw 코드중복 고치기
         Date date = new Date();
         String transactionDate = DateExample.dateToString(date);
         String transactionTime = DateExample.timeToString(date);
@@ -68,9 +69,11 @@ public class Account {
         return accountNo;
     }
 
+    // todo: random parameter 제거
     private static String generateRandomNumber(Random random) {
         StringBuilder sb = new StringBuilder();
 
+        //  todo: 매직넘버 상수 처리
         for (int i = 0; i < 12; i++) {
             int digit = random.nextInt(10);
             sb.append(digit);

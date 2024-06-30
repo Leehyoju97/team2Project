@@ -1,6 +1,7 @@
 public class Transaction {
     private String transactionDate;
     private String transactionTime;
+    // todo: String -> Kind or Type
     private String kind;
     private long amount;
     private long balance;
@@ -13,6 +14,7 @@ public class Transaction {
         this.balance = balance;
     }
 
+    // todo : 사용하지 않는 메서드 제거
     public String getTransactionDate() {
         return transactionDate;
     }
