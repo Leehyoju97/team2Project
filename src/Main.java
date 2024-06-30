@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static Scanner sc = new Scanner(System.in);
+    public static Bank bank = Bank.getInstance();
 
     public static void main(String[] args) {
 
@@ -61,7 +62,6 @@ public class Main {
         System.out.print("계좌 만들분 성함 입력: ");
         String name = sc.next();
 
-        Bank bank = Bank.getInstance();
         bank.addAccount(Account.generateAccountNumber(), name);
         System.out.println(name + "님 계좌 생성되었습니다.");
     }
@@ -70,7 +70,6 @@ public class Main {
         System.out.print("계좌 번호를 입력해주세요: ");
         String accountNo = sc.next();
 
-        Bank bank = Bank.getInstance();
         List<Account> accounts = bank.getAccounts();
 
         for (Account account : accounts) {
@@ -87,7 +86,6 @@ public class Main {
         System.out.print("소유자명을 입력해주세요: ");
         String name = sc.next();
 
-        Bank bank = Bank.getInstance();
         List<Account> accounts = bank.getAccounts();
 
         System.out.println("= 해당 소유자명의 계좌정보 =");
@@ -100,7 +98,6 @@ public class Main {
 
     private static void ListAllAccount() {
         System.out.println("= 전체 계좌 목록 =");
-        Bank bank = Bank.getInstance();
         List<Account> accounts = bank.getAccounts();
 
         for (Account account : accounts) {
@@ -163,7 +160,6 @@ public class Main {
     }
 
     private static void totalAccount() {
-        Bank bank = Bank.getInstance();
         int totalAccount = bank.getTotalAccount();
         System.out.println("총 계좌수 : " + totalAccount);
     }
