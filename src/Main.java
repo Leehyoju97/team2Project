@@ -14,28 +14,28 @@ public class Main {
             switch (choice) {
                 case 1:
                     createAccount();
-                    break; //계좌 생성
+                    break;
                 case 2:
                     findAccountByAccountNo();
-                    break;    // 계좌번호로 계좌 찾기
+                    break;
                 case 3:
                     findAccountByName();
-                    break; // 소유자명으로 계좌 찾기
+                    break;
                 case 4:
                     getAllAccounts();
-                    break;    //계좌 목록
+                    break;
                 case 5:
                     depositAccount();
-                    break;    // 입금
+                    break;
                 case 6:
                     withdrawAccount();
-                    break;   // 출금
+                    break;
                 case 7:
                     checkAccountBalance();
-                    break;  // 잔고 확인
+                    break;
                 case 8:
                     checkTransactionList();
-                    break;  // 거래내역
+                    break;
                 case 9:
                     totalAccount();
                     break;
