@@ -8,21 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         while (true) {
-            // todo: 메서드 분리(printMenu)
-            System.out.println("======================");
-            System.out.println("메뉴를 선택하세요");
-            System.out.println("1. 계좌 생성");
-            System.out.println("2. 계좌 찾기 (계좌번호)");
-            System.out.println("3. 계좌 찾기 (소유자명)");
-            System.out.println("4. 계좌 목록");
-            System.out.println("5. 입금");
-            System.out.println("6. 출금");
-            System.out.println("7. 잔고 확인");
-            System.out.println("8. 거래 내역");
-            System.out.println("9. 총 계좌수");
-            System.out.println("10. 종료");
-            System.out.println("======================");
-            System.out.print("번호 선택: ");
+            printPrintMenu();
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -58,6 +44,23 @@ public class Main {
                     return;
             }
         }
+    }
+
+    private static void printPrintMenu() {
+        System.out.println("======================");
+        System.out.println("메뉴를 선택하세요");
+        System.out.println("1. 계좌 생성");
+        System.out.println("2. 계좌 찾기 (계좌번호)");
+        System.out.println("3. 계좌 찾기 (소유자명)");
+        System.out.println("4. 계좌 목록");
+        System.out.println("5. 입금");
+        System.out.println("6. 출금");
+        System.out.println("7. 잔고 확인");
+        System.out.println("8. 거래 내역");
+        System.out.println("9. 총 계좌수");
+        System.out.println("10. 종료");
+        System.out.println("======================");
+        System.out.print("번호 선택: ");
     }
 
     private static void createAccount() {
