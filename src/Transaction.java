@@ -14,27 +14,6 @@ public class Transaction {
         this.balance = balance;
     }
 
-    // todo : 사용하지 않는 메서드 제거
-    public String getTransactionDate() {
-        return transactionDate;
-    }
-
-    public String getTransactionTime() {
-        return transactionTime;
-    }
-
-    public String getKind() {
-        return kind;
-    }
-
-    public long getAmount() {
-        return amount;
-    }
-
-    public long getBalance() {
-        return balance;
-    }
-
     @Override
     public String toString() {
         return "[거래금액 : " + amount +
