@@ -26,19 +26,7 @@ public class Bank {
         return accounts;
     }
 
-    public Account getAccount() {
-        return null;
-    }
-
     public int getTotalAccount() {
         return totalAccount;
-    }
-
-    @Override
-    public String toString() {
-        return "Bank{" +
-                "accounts=" + accounts +
-                ", totalAccount=" + totalAccount +
-                '}';
     }
 }
