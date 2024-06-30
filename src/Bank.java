@@ -7,8 +7,8 @@ public class Bank {
     private static Bank bank;
 
 
-
-    public Bank() {}
+    public Bank() {
+    }
 
     public static Bank getInstance() {
         if (bank == null) {
@@ -22,19 +22,19 @@ public class Bank {
     }
 
     public Account getAccount(String accountNo) {
-         for (Account account : accounts) {
-             if (account.getAccountNo().equals(accountNo)) {
+        for (Account account : accounts) {
+            if (account.getAccountNo().equals(accountNo)) {
                 return account;
-             }
-         }
-         System.out.println("계좌가 없습니다.");
-         return null;
+            }
+        }
+        System.out.println("계좌가 없습니다.");
+        return null;
     }
 
     public List<Account> findAccounts(String name) {
         List<Account> userAccounts = new ArrayList<>();
         for (Account account : accounts) {
-            if(account.getName().equals(name))
+            if (account.getName().equals(name))
                 userAccounts.add(account);
         }
         return userAccounts;
