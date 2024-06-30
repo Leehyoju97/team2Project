@@ -9,6 +9,7 @@ public class Main {
 
         while (true) {
             // todo: 메서드 분리(printMenu)
+            System.out.println("======================");
             System.out.println("메뉴를 선택하세요");
             System.out.println("1. 계좌 생성");
             System.out.println("2. 계좌 찾기 (계좌번호)");
@@ -76,7 +77,7 @@ public class Main {
         for (Account account : accounts) {
             if (account.getAccountNo().equals(accountNo)) {
                 System.out.println("= 해당 계좌번호의 계좌정보 =");
-                System.out.println(account.toString());
+                System.out.println(account);
                 return account;
             }
         }
@@ -92,7 +93,7 @@ public class Main {
         System.out.println("= 해당 소유자명의 계좌정보 =");
         for (Account account : accounts) {
             if (account.getName().equals(name)) {
-                System.out.println(account.toString());
+                System.out.println(account);
             }
         }
     }
@@ -137,7 +138,7 @@ public class Main {
         Account currentAccount = findAccountByAccountNo();
 
         if (currentAccount != null) {
-            currentAccount.getBalance();
+            System.out.println(currentAccount.getName() + "님의 잔고는 " + currentAccount.getBalance() + "원 입니다");
         } else {
             System.out.println("계좌 번호를 잘못 입력하셨습니다.");
         }
