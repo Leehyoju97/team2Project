@@ -25,19 +25,19 @@ public class Main {
                     getAllAccounts();
                     break;
                 case 5:
-                    depositAccount();
+                    deposit();
                     break;
                 case 6:
-                    withdrawAccount();
+                    withdraw();
                     break;
                 case 7:
-                    checkAccountBalance();
+                    getBalance();
                     break;
                 case 8:
-                    checkTransactionList();
+                    getTransactionList();
                     break;
                 case 9:
-                    totalAccount();
+                    getTotalAccount();
                     break;
                 case 10:
                     exit();
@@ -110,7 +110,7 @@ public class Main {
         }
     }
 
-    private static void depositAccount() {
+    private static void deposit() {
         Account currentAccount = findAccountByAccountNo();
 
         if (currentAccount != null) {
@@ -123,7 +123,7 @@ public class Main {
         }
     }
 
-    private static void withdrawAccount() {
+    private static void withdraw() {
         Account currentAccount = findAccountByAccountNo();
 
         if (currentAccount != null) {
@@ -136,7 +136,7 @@ public class Main {
         }
     }
 
-    private static void checkAccountBalance() {
+    private static void getBalance() {
         Account currentAccount = findAccountByAccountNo();
 
         if (currentAccount != null) {
@@ -146,7 +146,7 @@ public class Main {
         }
     }
 
-    private static void checkTransactionList() {
+    private static void getTransactionList() {
         Account currentAccount = findAccountByAccountNo();
 
         if (currentAccount != null) {
@@ -164,7 +164,7 @@ public class Main {
         System.out.println("프로그램을 종료합니다.");
     }
 
-    private static void totalAccount() {
+    private static void getTotalAccount() {
         int totalAccount = bank.getTotalAccount();
         System.out.println("총 계좌수 : " + totalAccount);
     }
