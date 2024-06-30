@@ -27,13 +27,11 @@ public class Main {
 
     public static void createAccount() {
         System.out.println("===========1. 계좌 생성===============");
-        Random random = new Random();
-        String accountNo = String.valueOf(random.nextInt(100) + 1);
         System.out.print("이름을 입력해주세요: ");
         String name = sc.next();
 
         Bank bank = Bank.getInstance();
-        bank.addAccount(accountNo, name);
+        bank.addAccount(Account.generateAccountNumber(), name);
     }
 
     public static void depositDetails(Account account){

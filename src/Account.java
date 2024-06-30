@@ -1,9 +1,8 @@
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Date;
+import java.util.*;
 
 public class Account {
+    private static Set<String> existingAccounts = new HashSet<>();
+
     private String accountNo;
     private String name;
     private long balance;
@@ -58,6 +57,27 @@ public class Account {
 
     public String getName() {
         return name;
+    }
+
+    public static String generateAccountNumber() {
+        Random random = new Random();
+        String accountNo;
+        do {
+            accountNo = generateRandomNumber(random);
+        } while (existingAccounts.contains(accountNo));
+
+        existingAccounts.add(accountNo);
+        return accountNo;
+    }
+
+    private static String generateRandomNumber(Random random) {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < 12; i++) {
+            int digit = random.nextInt(10);
+            sb.append(digit);
+        }
+        return sb.toString();
     }
 
     @Override
