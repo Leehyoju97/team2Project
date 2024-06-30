@@ -8,9 +8,6 @@ public class Account {
     private long balance;
     private List<Transaction> transactions;
 
-    static final String DEPOSIT = "입금";
-    static final String WITHDRAW = "출금";
-
     public Account(String accountNo, String name) {
         this.accountNo = accountNo;
         this.name = name;
@@ -25,7 +22,7 @@ public class Account {
         String transactionTime = DateExample.dateToString(date);
         balance += amount;
         System.out.println(amount + "원 입금하셨습니다.");
-        Transaction transaction = new Transaction(transactionDate, transactionTime, Account.DEPOSIT, amount, balance);
+        Transaction transaction = new Transaction(transactionDate, transactionTime, TransactionType.DEPOSIT.getTransaction(), amount, balance);
         transactions.add(transaction);
     }
 
@@ -39,7 +36,7 @@ public class Account {
         String transactionTime = DateExample.dateToString(date);
         balance -= amount;
         System.out.println(amount + "원 출금하셨습니다.");
-        Transaction transaction = new Transaction(transactionDate, transactionTime, Account.WITHDRAW, amount, balance);
+        Transaction transaction = new Transaction(transactionDate, transactionTime, TransactionType.WITHDRAW.getTransaction(), amount, balance);
         transactions.add(transaction);
     }
 
