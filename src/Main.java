@@ -63,7 +63,7 @@ public class Main {
         System.out.print("계좌 만들분 성함 입력: ");
         String name = sc.next();
 
-        bank.addAccount(Account.generateAccountNumber(), name);
+        bank.addAccount(AccountNoGenerator.generate(), name);
         System.out.println(name + "님 계좌 생성되었습니다.");
     }
 

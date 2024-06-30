@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class Account {
-    private static Set<String> existingAccounts = new HashSet<>();
-
     private String accountNo;
     private String name;
     private long balance;
@@ -56,29 +54,6 @@ public class Account {
 
     public List<Transaction> getTransactions() {
         return transactions;
-    }
-
-    public static String generateAccountNumber() {
-        Random random = new Random();
-        String accountNo;
-        do {
-            accountNo = generateRandomNumber(random);
-        } while (existingAccounts.contains(accountNo));
-
-        existingAccounts.add(accountNo);
-        return accountNo;
-    }
-
-    // todo: random parameter 제거
-    private static String generateRandomNumber(Random random) {
-        StringBuilder sb = new StringBuilder();
-
-        //  todo: 매직넘버 상수 처리
-        for (int i = 0; i < 12; i++) {
-            int digit = random.nextInt(10);
-            sb.append(digit);
-        }
-        return sb.toString();
     }
 
     @Override
