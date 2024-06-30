@@ -15,13 +15,13 @@ public class Account {
         this.transactions = new ArrayList<>();
     }
 
-
     public void deposit(long amount) {
         Date date = new Date();
         String transactionDate = DateExample.dateToString(date);
-        String transactionTime = DateExample.dateToString(date);
+        String transactionTime = DateExample.timeToString(date);
         balance += amount;
         System.out.println(amount + "원 입금하셨습니다.");
+        System.out.println("현재 잔액은 " + balance + "원 입니다.");
         Transaction transaction = new Transaction(transactionDate, transactionTime, TransactionType.DEPOSIT.getTransaction(), amount, balance);
         transactions.add(transaction);
     }
@@ -33,19 +33,12 @@ public class Account {
         }
         Date date = new Date();
         String transactionDate = DateExample.dateToString(date);
-        String transactionTime = DateExample.dateToString(date);
+        String transactionTime = DateExample.timeToString(date);
         balance -= amount;
         System.out.println(amount + "원 출금하셨습니다.");
+        System.out.println("현재 잔액은 " + balance + "원 입니다.");
         Transaction transaction = new Transaction(transactionDate, transactionTime, TransactionType.WITHDRAW.getTransaction(), amount, balance);
         transactions.add(transaction);
-    }
-
-    public long getBalance() {
-        return balance;
-    }
-
-    public List<Transaction> getTransactions() {
-        return transactions;
     }
 
     public String getAccountNo() {
@@ -54,6 +47,14 @@ public class Account {
 
     public String getName() {
         return name;
+    }
+
+    public long getBalance() {
+        return balance;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
     public static String generateAccountNumber() {
