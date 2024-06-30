@@ -36,7 +36,7 @@ public class Main {
                     findAccountByName();
                     break; // 소유자명으로 계좌 찾기
                 case 4:
-                    ListAllAccount();
+                    getAllAccounts();
                     break;    //계좌 목록
                 case 5:
                     depositAccount();
@@ -98,8 +98,7 @@ public class Main {
         }
     }
 
-    // todo: 메서드 네이밍 수정
-    private static void ListAllAccount() {
+    private static void getAllAccounts() {
         System.out.println("= 전체 계좌 목록 =");
         List<Account> accounts = bank.getAccounts();
 

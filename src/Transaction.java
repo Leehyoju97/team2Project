@@ -1,15 +1,14 @@
 public class Transaction {
     private String transactionDate;
     private String transactionTime;
-    // todo: String -> Kind or Type
-    private String kind;
+    private Type type;
     private long amount;
     private long balance;
 
-    public Transaction(String transactionDate, String transactionTime, String kind, long amount, long balance) {
+    public Transaction(String transactionDate, String transactionTime, Type type, long amount, long balance) {
         this.transactionDate = transactionDate;
         this.transactionTime = transactionTime;
-        this.kind = kind;
+        this.type = type;
         this.amount = amount;
         this.balance = balance;
     }
