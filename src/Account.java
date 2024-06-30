@@ -27,7 +27,7 @@ public class Account {
     }
 
     public void withdraw(long amount) {
-        if(amount > balance) {
+        if (amount > balance) {
             System.out.println("잔액이 부족합니다.");
             return;
         }
@@ -80,7 +80,7 @@ public class Account {
     @Override
     public String toString() {
         return "[계좌번호: " + accountNo +
-                ", 소유자 명: "  + name +
+                ", 소유자 명: " + name +
                 ", 잔액: " + balance + "]";
     }
 }

@@ -11,7 +11,7 @@ public class Transaction {
             String kind,
             long amount,
             long balance
-    ){
+    ) {
         this.transactionDate = transactionDate;
         this.transactionTime = transactionTime;
         this.kind = kind;
@@ -26,6 +26,7 @@ public class Transaction {
     public String getTransactionTime() {
         return transactionTime;
     }
+
     public void setTransactionDate() {
     }
 
@@ -48,7 +49,7 @@ public class Transaction {
         return amount;
     }
 
-    public long setAmount(){
+    public long setAmount() {
         return amount;
     }
 

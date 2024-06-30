@@ -1,12 +1,11 @@
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        while(true) {
+        while (true) {
 
             System.out.println("메뉴를 선택하세요");
             System.out.println("1. 계좌 생성");
@@ -17,10 +16,18 @@ public class Main {
             int choice = sc.nextInt();
 
             switch (choice) {
-                case 1: createAccount(); break;
-                case 2: getAccount(); break;
-                case 3: getAccountList(); break;
-                case 4: exit(); return;
+                case 1:
+                    createAccount();
+                    break;
+                case 2:
+                    getAccount();
+                    break;
+                case 3:
+                    getAccountList();
+                    break;
+                case 4:
+                    exit();
+                    return;
             }
         }
     }
@@ -34,14 +41,14 @@ public class Main {
         bank.addAccount(Account.generateAccountNumber(), name);
     }
 
-    public static void depositDetails(Account account){
+    public static void depositDetails(Account account) {
         System.out.println("입금할 금액을 입력하세요: ");
         long amount = sc.nextLong();
         account.deposit(amount);
         System.out.println("현재 잔액은 " + account.getBalance() + "원 입니다.\n");
     }
 
-    public static void withDrawDetails(Account account){
+    public static void withDrawDetails(Account account) {
         System.out.println("출금할 금액을 입력하세요: ");
         long amount = sc.nextLong();
         account.withdraw(amount);
@@ -54,8 +61,12 @@ public class Main {
         System.out.println("1.계좌번호 2.이름");
         int choice = sc.nextInt();
         switch (choice) {
-            case 1: getAccountByAccountNo(); break;
-            case 2: getAccountsByName(); break;
+            case 1:
+                getAccountByAccountNo();
+                break;
+            case 2:
+                getAccountsByName();
+                break;
         }
     }
 
@@ -71,12 +82,16 @@ public class Main {
         System.out.println("1.입금 2.출금");
         int choice = sc.nextInt();
         switch (choice) {
-            case 1: depositDetails(account); break;
-            case 2: withDrawDetails(account); break;
+            case 1:
+                depositDetails(account);
+                break;
+            case 2:
+                withDrawDetails(account);
+                break;
         }
     }
 
-    public static void getAccountsByName(){
+    public static void getAccountsByName() {
         Bank bank = Bank.getInstance();
         System.out.println("이름을 입력하세요: ");
         String name = sc.next();
@@ -93,7 +108,7 @@ public class Main {
         Bank bank = Bank.getInstance();
         List<Account> accounts = bank.getAccounts();
 
-        for(Account account : accounts) {
+        for (Account account : accounts) {
             System.out.println(account.toString());
         }
     }
