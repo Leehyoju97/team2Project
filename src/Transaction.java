@@ -40,6 +40,6 @@ public class Transaction {
         return "[거래금액 : " + amount +
                 ", 잔액 : " + balance +
                 "원 /" + transactionDate +
-                transactionTime + '\'' + "]";
+                transactionTime + "]";
     }
 }
