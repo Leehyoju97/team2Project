@@ -14,15 +14,9 @@ public class Account {
     }
 
     public void deposit(long amount) {
-        // todo: withdraw 코드중복 고치기
-        Date date = new Date();
-        String transactionDate = DateConverter.dateToString(date);
-        String transactionTime = DateConverter.timeToString(date);
         balance += amount;
-        System.out.println(amount + "원 입금하셨습니다.");
-        System.out.println("현재 잔액은 " + balance + "원 입니다.");
-        Transaction transaction = new Transaction(transactionDate, transactionTime, TransactionType.DEPOSIT.getTransaction(), amount, balance);
-        transactions.add(transaction);
+        printBalance(Type.DEPOSIT, amount);
+        addTransaction(Type.DEPOSIT, amount);
     }
 
     public void withdraw(long amount) {
@@ -30,13 +24,23 @@ public class Account {
             System.out.println("잔액이 부족합니다.");
             return;
         }
+
+        balance -= amount;
+        printBalance(Type.WITHDRAW, amount);
+        addTransaction(Type.WITHDRAW, amount);
+    }
+
+    private void printBalance(Type type, long amount) {
+        System.out.println(amount + "원 " + type.getName() + "하셨습니다.");
+        System.out.println("현재 잔액은 " + balance + "원 입니다.");
+    }
+
+    private void addTransaction(Type type, long amount) {
         Date date = new Date();
         String transactionDate = DateConverter.dateToString(date);
         String transactionTime = DateConverter.timeToString(date);
-        balance -= amount;
-        System.out.println(amount + "원 출금하셨습니다.");
-        System.out.println("현재 잔액은 " + balance + "원 입니다.");
-        Transaction transaction = new Transaction(transactionDate, transactionTime, TransactionType.WITHDRAW.getTransaction(), amount, balance);
+
+        Transaction transaction = new Transaction(transactionDate, transactionTime, type, amount, balance);
         transactions.add(transaction);
     }
 

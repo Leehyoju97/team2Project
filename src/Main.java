@@ -8,56 +8,59 @@ public class Main {
     public static void main(String[] args) {
 
         while (true) {
-            // todo: 메서드 분리(printMenu)
-            System.out.println("======================");
-            System.out.println("메뉴를 선택하세요");
-            System.out.println("1. 계좌 생성");
-            System.out.println("2. 계좌 찾기 (계좌번호)");
-            System.out.println("3. 계좌 찾기 (소유자명)");
-            System.out.println("4. 계좌 목록");
-            System.out.println("5. 입금");
-            System.out.println("6. 출금");
-            System.out.println("7. 잔고 확인");
-            System.out.println("8. 거래 내역");
-            System.out.println("9. 총 계좌수");
-            System.out.println("10. 종료");
-            System.out.println("======================");
-            System.out.print("번호 선택: ");
+            printPrintMenu();
             int choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
                     createAccount();
-                    break; //계좌 생성
+                    break;
                 case 2:
                     findAccountByAccountNo();
-                    break;    // 계좌번호로 계좌 찾기
+                    break;
                 case 3:
                     findAccountByName();
-                    break; // 소유자명으로 계좌 찾기
+                    break;
                 case 4:
-                    ListAllAccount();
-                    break;    //계좌 목록
+                    getAllAccounts();
+                    break;
                 case 5:
-                    depositAccount();
-                    break;    // 입금
+                    deposit();
+                    break;
                 case 6:
-                    withdrawAccount();
-                    break;   // 출금
+                    withdraw();
+                    break;
                 case 7:
-                    checkAccountBalance();
-                    break;  // 잔고 확인
+                    getBalance();
+                    break;
                 case 8:
-                    checkTransactionList();
-                    break;  // 거래내역
+                    getTransactionList();
+                    break;
                 case 9:
-                    totalAccount();
+                    getTotalAccount();
                     break;
                 case 10:
                     exit();
                     return;
             }
         }
+    }
+
+    private static void printPrintMenu() {
+        System.out.println("======================");
+        System.out.println("메뉴를 선택하세요");
+        System.out.println("1. 계좌 생성");
+        System.out.println("2. 계좌 찾기 (계좌번호)");
+        System.out.println("3. 계좌 찾기 (소유자명)");
+        System.out.println("4. 계좌 목록");
+        System.out.println("5. 입금");
+        System.out.println("6. 출금");
+        System.out.println("7. 잔고 확인");
+        System.out.println("8. 거래 내역");
+        System.out.println("9. 총 계좌수");
+        System.out.println("10. 종료");
+        System.out.println("======================");
+        System.out.print("번호 선택: ");
     }
 
     private static void createAccount() {
@@ -98,8 +101,7 @@ public class Main {
         }
     }
 
-    // todo: 메서드 네이밍 수정
-    private static void ListAllAccount() {
+    private static void getAllAccounts() {
         System.out.println("= 전체 계좌 목록 =");
         List<Account> accounts = bank.getAccounts();
 
@@ -108,7 +110,7 @@ public class Main {
         }
     }
 
-    private static void depositAccount() {
+    private static void deposit() {
         Account currentAccount = findAccountByAccountNo();
 
         if (currentAccount != null) {
@@ -121,7 +123,7 @@ public class Main {
         }
     }
 
-    private static void withdrawAccount() {
+    private static void withdraw() {
         Account currentAccount = findAccountByAccountNo();
 
         if (currentAccount != null) {
@@ -134,7 +136,7 @@ public class Main {
         }
     }
 
-    private static void checkAccountBalance() {
+    private static void getBalance() {
         Account currentAccount = findAccountByAccountNo();
 
         if (currentAccount != null) {
@@ -144,7 +146,7 @@ public class Main {
         }
     }
 
-    private static void checkTransactionList() {
+    private static void getTransactionList() {
         Account currentAccount = findAccountByAccountNo();
 
         if (currentAccount != null) {
@@ -162,7 +164,7 @@ public class Main {
         System.out.println("프로그램을 종료합니다.");
     }
 
-    private static void totalAccount() {
+    private static void getTotalAccount() {
         int totalAccount = bank.getTotalAccount();
         System.out.println("총 계좌수 : " + totalAccount);
     }
